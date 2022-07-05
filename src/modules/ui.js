@@ -3,10 +3,27 @@ const createCheckBox = () => {
   checkbox.classList.add('cb');
   checkbox.type = 'checkbox';
   checkbox.classList.add('check_box');
-  /*
-    TODO: add event listener here
-  */
   return checkbox;
+};
+
+const createIcon = () => {
+  const groupDiv = document.createElement('div');
+
+  const ellipsis = document.createElement('i');
+  ellipsis.classList.add('fa-solid', 'fa-ellipsis-vertical');
+  ellipsis.addEventListener('click', (e) => {
+    e.target.classList.add('hidden');
+    e.target.nextElementSibling.classList.remove('hidden');
+  });
+
+  const trash = document.createElement('i');
+  trash.classList.add('fa-solid', 'fa-trash');
+  trash.classList.add('hidden');
+
+  groupDiv.append(ellipsis);
+  groupDiv.appendChild(trash);
+
+  return groupDiv;
 };
 
 const addActivity = (TodoListElement, task) => {
@@ -14,9 +31,8 @@ const addActivity = (TodoListElement, task) => {
   taskBlock.classList.add('task_block');
 
   // more icon holder dive
-  const dots = document.createElement('div');
+  const dots = createIcon();
   dots.classList.add('more');
-  dots.textContent = 'w';
 
   // div to group checkbox & description
   const itemGroup = document.createElement('div');
