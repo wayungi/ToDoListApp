@@ -21,4 +21,9 @@ const populateHtmlList = (elem, f) => {
   return null;
 };
 
-export { populateHtmlList };
+const getTasks = () => tasks;
+
+export {
+  populateHtmlList,
+  getTasks,
+};
