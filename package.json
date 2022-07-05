@@ -2,7 +2,7 @@
   "name": "todolistapp",
   "version": "1.0.0",
   "description": "manage tasks",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "mocha"
   },
