@@ -1,10 +1,12 @@
 const createCheckBox = () => {
-  const checkBox = document.createElement('checkbox');
-  checkBox.classList.add('cb');
+  const checkbox = document.createElement('input');
+  checkbox.classList.add('cb');
+  checkbox.type = 'checkbox';
+  checkbox.name = 'name';
   /*
     TODO: add event listener here
   */
-  return checkBox;
+  return checkbox;
 };
 
 const addActivity = (TodoListElement, task) => {
