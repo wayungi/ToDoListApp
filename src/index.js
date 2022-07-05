@@ -1,9 +1,9 @@
 import './style.css';
 import {
-  populateHtmlList,
   getTasks,
-} from './modules/tasks';
-import { addActivity } from './ui';
+} from './modules/tasks.js';
+import { addActivity } from './modules/ui.js';
+import Icon from './reviewer_video.png';
 
 const todoList = document.getElementById('todo_list');
 
