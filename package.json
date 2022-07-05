@@ -4,7 +4,8 @@
   "description": "manage tasks",
   "private": true,
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
