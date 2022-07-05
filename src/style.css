@@ -34,10 +34,6 @@ input[type='text'] {
     font-size:1.1em;
 }
 
-/* form {
-    padding:0 20px;
-} */
-
 .task_block {
     display:flex;
     flex-direction: row;
@@ -52,14 +48,13 @@ input[type='text'] {
     margin-right: 10px;
 }
 
-.cb_desc {
-    /* border:1px solid green; */
+
+input[type='button'] {
+    all:unset;
+    min-height: 50px;
+    text-align: center;
+    background-color: rgba(200,200,200, 0.2);
 }
-
-/* .todo_list{
-  border:3px solid red
-} */
-
 
 .flex-row {
     display:flex;
