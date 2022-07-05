@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7a892cb0b1.js" crossorigin="anonymous"></script>  <title>To do list App</title>
     <title>TODo App</title>
 </head>
 <body>
     <div class="wrapper flex-column">
         <header>
             <h1>Today's To Do</h1>
-            <!-- TODO: add refresh icon here -->
+            <div class="refresh_icon">
+                <i class="fa-solid fa-rotate"></i>
+            </div>
         </header>
 
         <form action="#">
             <input type="text" id="task-input-field" placeholder="Add to your list..."/>
+            <div class="return"><i class="fa-regular fa-arrow-turn-down-left"></i></div>
         </form>
 
         <!-- todoList list place holder -->

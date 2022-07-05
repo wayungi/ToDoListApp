@@ -3,7 +3,6 @@ const createCheckBox = () => {
   checkbox.classList.add('cb');
   checkbox.type = 'checkbox';
   checkbox.classList.add('check_box');
-  
   /*
     TODO: add event listener here
   */
