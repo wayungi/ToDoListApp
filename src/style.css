@@ -3,10 +3,51 @@ body,html, div, h1, h2, p, header {
     padding:0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display:flex;
+    width:70%;
+    margin:4% auto;
+    box-shadow: 0 0 5px 2px rgba(140, 140, 140, .5);
+}
+
+.task_block {
+    display:flex;
+    flex-direction: row;
+    border-bottom:1px solid rgba(200,200,200, 0.5);
+    min-height:40px;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 20px;
+}
+
+.check_box {
+    margin-right: 10px;
+}
+
+.cb_desc {
+    /* border:1px solid green; */
+}
+
+/* .todo_list{
+  border:3px solid red
+} */
+
+
+.flex-row {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.flex-column {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 
-body {
-    background-color: bisque;
-}
+
 
