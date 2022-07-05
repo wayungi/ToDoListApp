@@ -16,7 +16,7 @@ const tasks = [
   },
 ];
 
-const populateHtmlList = (f, elem) => {
+const populateHtmlList = (elem, f) => {
   tasks.forEach((task) => f(elem, task));
   return null;
 };
