@@ -46,6 +46,7 @@ input[type='text'] {
 
 .check_box {
     margin-right: 10px;
+    cursor:pointer;
 }
 
 
@@ -54,6 +55,9 @@ input[type='button'] {
     min-height: 50px;
     text-align: center;
     background-color: rgba(200,200,200, 0.2);
+    color:rgba(100, 100, 100, 0.7);
+    cursor: pointer;
+    
 }
 
 .flex-row {
