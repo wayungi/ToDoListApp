@@ -11,15 +11,24 @@ const createCheckBox = () => {
 
 const addActivity = (TodoListElement, task) => {
   const taskBlock = document.createElement('div');
+  taskBlock.classList.add('task_block');
+
+  const dots = document.createElement('div');
+  dots.classList.add('more');
+
+  // div to group checkbox & description
+  const itemGroup = document.createElement('div');
+  itemGroup.classList.add('cb_desc');
+
   const p = document.createElement('p');
   p.textContent = task.description;
-
   const checkBox = createCheckBox();
 
-  taskBlock.appendChild(checkBox);
-  taskBlock.appendChild(p);
+  itemGroup.appendChild(checkBox);
+  itemGroup.appendChild(p);
 
-  TodoListElement.appendChild(taskBlock);
+  TodoListElement.appendChild(itemGroup);
+  TodoListElement.appendChild(dots);
   return null;
 };
 
