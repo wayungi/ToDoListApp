@@ -23,6 +23,21 @@ header h1 {
     font-size: 1.5em;
 }
 
+input[type='text'] {
+    all:unset;
+    border:none;
+    height:40px;
+    width:100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(200,200,200, 0.5);
+    padding:0 20px;
+    font-size:1.1em;
+}
+
+/* form {
+    padding:0 20px;
+} */
+
 .task_block {
     display:flex;
     flex-direction: row;
