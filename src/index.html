@@ -3,9 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wbpack Exercise</title>
+    <title>TODo App</title>
 </head>
 <body>
-    <h1>Hello webpack!</h1>
+    <div class="wrapper">
+        <header>
+            <h1>Today's To Do</h1>
+            <!-- TODO: add refresh icon here -->
+        </header>
+
+        <form action="#">
+            <input type="text" id="task-input-field" placeholder="Add to your list..."/>
+        </form>
+
+        <ul class="todo_list">
+            <li class="todo_list_item">Wash dishes</li>
+            <li class="todo_list_item">Complete todo list project</li>
+        </ul>
+
+        <input type="button" value="Clear all completed">
+       
+    </div>
+    
 </body>
 </html>
