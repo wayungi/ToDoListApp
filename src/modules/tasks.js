@@ -20,7 +20,10 @@ const getTasks = () => tasks;
 
 const addTask = (task) => tasks.push(task);
 
+const removeTask = (index) => tasks.splice(index, 1);
+
 export {
   addTask,
   getTasks,
+  removeTask,
 };
