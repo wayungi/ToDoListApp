@@ -3,3 +3,10 @@ const createTask = (description, completed = false, index) => ({
   completed,
   index,
 });
+
+const test = (x) => x;
+
+export {
+  createTask,
+  test,
+};

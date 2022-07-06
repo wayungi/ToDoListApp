@@ -18,7 +18,7 @@ const tasks = [
 
 const getTasks = () => tasks;
 
-const addTask = (task) => task;
+const addTask = (task) => tasks.push(task);
 
 export {
   addTask,
