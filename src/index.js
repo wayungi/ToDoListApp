@@ -20,6 +20,6 @@ form.addEventListener('submit', () => {
   const userInput = formInput.value;
   const task = createTask(userInput, false, getTasks().length + 1);
   addTask(task);
-  console.log(getTasks());
+  addActivity(todoList, task);
   document.getElementById('task_input_field').value = '';
 });
