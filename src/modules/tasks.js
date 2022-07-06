@@ -16,14 +16,11 @@ const tasks = [
   },
 ];
 
-const populateHtmlList = (elem, f) => {
-  tasks.forEach((task) => f(elem, task));
-  return null;
-};
-
 const getTasks = () => tasks;
 
+const addTask = (task) => task;
+
 export {
-  populateHtmlList,
+  addTask,
   getTasks,
 };
