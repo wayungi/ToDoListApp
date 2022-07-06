@@ -52,12 +52,13 @@ const addActivity = (TodoListElement, task) => {
   const itemGroup = document.createElement('div');
   itemGroup.classList.add('cb_desc', 'flex-row');
 
-  const p = document.createElement('p');
-  p.textContent = task.description;
+  const textInput = document.createElement('input');
+  textInput.setAttribute('type', 'text');
+  textInput.textContent = task.description;
   const checkBox = createCheckBox();
 
   itemGroup.appendChild(checkBox);
-  itemGroup.appendChild(p);
+  itemGroup.appendChild(textInput);
 
   taskBlock.appendChild(itemGroup);
   taskBlock.appendChild(dots);
