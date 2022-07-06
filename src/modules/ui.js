@@ -30,6 +30,7 @@ const createIcon = () => {
   trash.addEventListener('click', (e) => {
     removeTask(e.target.parentElement.parentElement.id);
     deleteActivity(e.target.parentElement.parentElement.id);
+    updateIndex(e.target.parentElement.parentElement.id);
   });
   trash.classList.add('hidden');
 
