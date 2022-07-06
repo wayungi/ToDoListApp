@@ -1,4 +1,13 @@
-import {removeTask} from './tasks.js';
+import {
+  removeTask,
+  updateIndex,
+} from './tasks.js';
+
+const deleteActivity = (taskBlockId) => {
+  const taskBlock = document.getElementById(taskBlockId);
+  taskBlock.remove();
+  return taskBlock;
+};
 
 const createCheckBox = () => {
   const checkbox = document.createElement('input');
@@ -8,24 +17,19 @@ const createCheckBox = () => {
   return checkbox;
 };
 
-const createIcon = (index) => {
+const createIcon = () => {
   const groupDiv = document.createElement('div');
-
   const ellipsis = document.createElement('i');
   ellipsis.classList.add('fa-solid', 'fa-ellipsis-vertical');
   ellipsis.addEventListener('click', (e) => {
     e.target.classList.add('hidden');
     e.target.nextElementSibling.classList.remove('hidden');
   });
-
   const trash = document.createElement('i');
   trash.classList.add('fa-solid', 'fa-trash');
   trash.addEventListener('click', (e) => {
-    // remove item from interaface
-    e.target.parentElement.parentElement.remove();
-    // remove item from array
-    const x = removeTask(index);
-    console.log(x);
+    removeTask(e.target.parentElement.parentElement.id);
+    deleteActivity(e.target.parentElement.parentElement.id);
   });
   trash.classList.add('hidden');
 
@@ -38,10 +42,9 @@ const createIcon = (index) => {
 const addActivity = (TodoListElement, task) => {
   const taskBlock = document.createElement('div');
   taskBlock.classList.add('task_block');
-  // taskBlock.setAttribute('id', task.index);
-
+  taskBlock.setAttribute('id', task.id);
   // more icon holder dive
-  const dots = createIcon(task.index);
+  const dots = createIcon();
   dots.classList.add('more');
 
   // div to group checkbox & description
@@ -60,12 +63,6 @@ const addActivity = (TodoListElement, task) => {
 
   TodoListElement.appendChild(taskBlock);
   return null;
-};
-
-const deleteActivity = (index) => {
-  const taskBlock = document.getElementById(index);
-  taskBlock.remove();
-  return taskBlock;
 };
 
 export {

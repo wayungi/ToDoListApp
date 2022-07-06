@@ -1,7 +1,7 @@
-const createTask = (description, completed = false, index) => ({
+const createTask = (description, completed = false, id) => ({
   description,
   completed,
-  index,
+  id,
 });
 
 const test = (x) => x;
