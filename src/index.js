@@ -6,13 +6,18 @@ import {
   updateIndex,
   updateTask,
   updateLocalStorage,
-} from './modules/tasks.js';
+  clearCompleted,
+} from './modules/methods.js';
 import { addActivity } from './modules/ui.js';
-import { createTask } from './modules/task.js';
+import {
+  createTask,
+  toggleCompleteStatus,
+} from './modules/task.js';
 
 const todoList = document.getElementById('todo_list');
 const form = document.getElementById('task_form');
 const formInput = document.getElementById('task_input_field');
+const clearAllCompleted = document.getElementById('clear_btn');
 
 // popultate the app with tasks
 document.addEventListener('DOMContentLoaded', () => {
@@ -50,4 +55,25 @@ todoList.addEventListener('keypress', (e) => {
     e.target.classList.toggle('uneditable');
     updateLocalStorage();
   }
+});
+
+// add change event listener to the checkbox
+todoList.addEventListener('change', (e) => {
+  const completed = e.target.checked; // returns true/false based on checkbox status
+  const isbn = e.target.parentElement.parentElement.id;
+  const tasks = getTasks();
+  tasks.forEach((task) => {
+    if (task.isbn === isbn) {
+      toggleCompleteStatus(task, completed);
+    }
+  });
+  updateLocalStorage();
+});
+
+// clear all completed event listener
+clearAllCompleted.addEventListener('click', () => {
+  clearCompleted();
+  updateLocalStorage();
+  todoList.innerHTML = '';
+  getTasks().forEach((task) => addActivity(todoList, task));
 });

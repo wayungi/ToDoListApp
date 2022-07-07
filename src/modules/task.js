@@ -5,9 +5,12 @@ const createTask = (description, completed = false, id) => ({
   id,
 });
 
-const test = (x) => x;
+const toggleCompleteStatus = (task, completed) => {
+  task.completed = completed;
+  return task;
+};
 
 export {
   createTask,
-  test,
+  toggleCompleteStatus,
 };

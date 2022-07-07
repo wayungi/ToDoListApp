@@ -29,6 +29,11 @@ const updateLocalStorage = () => {
   localStorage.setItem('tasks', JSON.stringify(tasks));
 };
 
+const clearCompleted = () => {
+  tasks = tasks.filter((task) => task.completed === false);
+  return tasks;
+};
+
 export {
   addTask,
   getTasks,
@@ -36,4 +41,5 @@ export {
   updateIndex,
   updateTask,
   updateLocalStorage,
+  clearCompleted,
 };
