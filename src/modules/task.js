@@ -5,9 +5,11 @@ const createTask = (description, completed = false, id) => ({
   id,
 });
 
-const test = (x) => x;
+const clearAllCompleted = () => {
+  return null;
+}
 
 export {
   createTask,
-  test,
+  clearAllCompleted,
 };

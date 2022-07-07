@@ -6,9 +6,12 @@ import {
   updateIndex,
   updateTask,
   updateLocalStorage,
-} from './modules/tasks.js';
+} from './modules/methods.js';
 import { addActivity } from './modules/ui.js';
-import { createTask } from './modules/task.js';
+import {
+  createTask,
+  clearAllCompleted,
+} from './modules/task.js';
 
 const todoList = document.getElementById('todo_list');
 const form = document.getElementById('task_form');
