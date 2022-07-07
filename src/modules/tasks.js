@@ -1,29 +1,39 @@
-const tasks = [
-  {
-    description: 'Wash dishes',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Complete to do list App',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Take a walk for 2 hours',
-    completed: false,
-    index: 2,
-  },
-];
-
-const populateHtmlList = (elem, f) => {
-  tasks.forEach((task) => f(elem, task));
-  return null;
-};
+let tasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
 
 const getTasks = () => tasks;
 
+const addTask = (task) => tasks.push(task);
+
+const removeTask = (isbn) => {
+  const task = tasks.find((task) => task.isbn === isbn);
+  const indexOfTask = tasks.indexOf(task);
+  tasks = tasks.filter((task) => task.isbn.toString() !== isbn);
+  return indexOfTask;
+};
+
+const updateIndex = (index) => {
+  for (let i = index; i < tasks.length; i += 1) {
+    tasks[i].id = i + 1;
+  }
+  return null;
+};
+
+const updateTask = (editedValue, isbn) => {
+  const task = tasks.find((task) => task.isbn === isbn);
+  const indexOfTask = tasks.indexOf(task);
+  tasks[indexOfTask].description = editedValue;
+  return task;
+};
+
+const updateLocalStorage = () => {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+};
+
 export {
-  populateHtmlList,
+  addTask,
   getTasks,
+  removeTask,
+  updateIndex,
+  updateTask,
+  updateLocalStorage,
 };

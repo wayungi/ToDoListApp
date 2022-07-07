@@ -46,6 +46,15 @@ input[type='text'] {
   font-size: 1.1em;
 }
 
+.cb_desc {
+  /* border:1px solid black; */
+  width: 95%;
+}
+
+input[type='text']#description {
+  border: none;
+}
+
 .task_block {
   display: flex;
   flex-direction: row;
@@ -58,6 +67,12 @@ input[type='text'] {
 
 .check_box {
   margin-right: 10px;
+  cursor: pointer;
+}
+
+.fa-ellipsis-vertical,
+.fa-trash {
+  padding: 8px 12px;
   cursor: pointer;
 }
 
@@ -84,4 +99,8 @@ input[type='button'] {
 
 .hidden {
   display: none;
+}
+
+input[type='text'].uneditable {
+  color: rgba(100, 100, 100, 0.7);
 }

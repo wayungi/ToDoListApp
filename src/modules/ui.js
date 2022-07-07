@@ -1,3 +1,9 @@
+const deleteActivity = (taskBlockId) => {
+  const taskBlock = document.getElementById(taskBlockId);
+  taskBlock.remove();
+  return taskBlock;
+};
+
 const createCheckBox = () => {
   const checkbox = document.createElement('input');
   checkbox.classList.add('cb');
@@ -8,14 +14,12 @@ const createCheckBox = () => {
 
 const createIcon = () => {
   const groupDiv = document.createElement('div');
-
   const ellipsis = document.createElement('i');
   ellipsis.classList.add('fa-solid', 'fa-ellipsis-vertical');
   ellipsis.addEventListener('click', (e) => {
     e.target.classList.add('hidden');
     e.target.nextElementSibling.classList.remove('hidden');
   });
-
   const trash = document.createElement('i');
   trash.classList.add('fa-solid', 'fa-trash');
   trash.classList.add('hidden');
@@ -29,7 +33,7 @@ const createIcon = () => {
 const addActivity = (TodoListElement, task) => {
   const taskBlock = document.createElement('div');
   taskBlock.classList.add('task_block');
-
+  taskBlock.setAttribute('id', task.isbn);
   // more icon holder dive
   const dots = createIcon();
   dots.classList.add('more');
@@ -38,12 +42,22 @@ const addActivity = (TodoListElement, task) => {
   const itemGroup = document.createElement('div');
   itemGroup.classList.add('cb_desc', 'flex-row');
 
-  const p = document.createElement('p');
-  p.textContent = task.description;
+  const textInput = document.createElement('input');
+  textInput.setAttribute('type', 'text');
+  textInput.setAttribute('id', 'description');
+  textInput.setAttribute('readonly', 'readonly');
+  textInput.classList.add('uneditable');
+
+  textInput.value = task.description;
+  textInput.addEventListener('dblclick', (e) => {
+    e.target.removeAttribute('readonly');
+    e.target.classList.remove('uneditable');
+  });
+
   const checkBox = createCheckBox();
 
   itemGroup.appendChild(checkBox);
-  itemGroup.appendChild(p);
+  itemGroup.appendChild(textInput);
 
   taskBlock.appendChild(itemGroup);
   taskBlock.appendChild(dots);
@@ -52,9 +66,7 @@ const addActivity = (TodoListElement, task) => {
   return null;
 };
 
-const x = (n) => n;
-
 export {
   addActivity,
-  x,
+  deleteActivity,
 };
