@@ -65,6 +65,5 @@ todoList.addEventListener('change', (e) => {
       toggleCompleteStatus(task, completed);
     }
   });
-  console.log(getTasks());
   updateLocalStorage();
 });

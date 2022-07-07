@@ -4,11 +4,12 @@ const deleteActivity = (taskBlockId) => {
   return taskBlock;
 };
 
-const createCheckBox = () => {
+const createCheckBox = (checkboxState) => {
   const checkbox = document.createElement('input');
   checkbox.classList.add('cb');
   checkbox.type = 'checkbox';
   checkbox.classList.add('check_box');
+  checkbox.checked = checkboxState;
   return checkbox;
 };
 
@@ -54,7 +55,7 @@ const addActivity = (TodoListElement, task) => {
     e.target.classList.remove('uneditable');
   });
 
-  const checkBox = createCheckBox();
+  const checkBox = createCheckBox(task.completed);
 
   itemGroup.appendChild(checkBox);
   itemGroup.appendChild(textInput);
