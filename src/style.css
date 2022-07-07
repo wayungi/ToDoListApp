@@ -46,6 +46,16 @@ input[type='text'] {
   font-size: 1.1em;
 }
 
+.cb_desc {
+  /* border:1px solid black; */
+  width:95%;
+}
+
+input[type='text']#description{
+  /* border:1px solid red; */
+  border:none;
+}
+
 .task_block {
   display: flex;
   flex-direction: row;
@@ -84,4 +94,8 @@ input[type='button'] {
 
 .hidden {
   display: none;
+}
+
+input[type='text'].uneditable {
+  color: rgba(100, 100, 100, 0.7);
 }

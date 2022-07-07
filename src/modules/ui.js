@@ -28,9 +28,11 @@ const createIcon = () => {
   const trash = document.createElement('i');
   trash.classList.add('fa-solid', 'fa-trash');
   trash.addEventListener('click', (e) => {
-    removeTask(e.target.parentElement.parentElement.id);
-    deleteActivity(e.target.parentElement.parentElement.id);
-    updateIndex(e.target.parentElement.parentElement.id);
+    const taskId = e.target.parentElement.parentElement.id;
+    removeTask(taskId);
+    deleteActivity(taskId);
+    updateIndex(taskId);
+    //
   });
   trash.classList.add('hidden');
 
@@ -54,7 +56,16 @@ const addActivity = (TodoListElement, task) => {
 
   const textInput = document.createElement('input');
   textInput.setAttribute('type', 'text');
-  textInput.textContent = task.description;
+  textInput.setAttribute('id', 'description');
+  textInput.setAttribute('readonly', 'readonly');
+  textInput.classList.add('uneditable');
+
+  textInput.value = task.description;
+  textInput.addEventListener('dblclick', (e) => {
+    e.target.removeAttribute('readonly');
+    e.target.classList.remove('uneditable');
+  });
+
   const checkBox = createCheckBox();
 
   itemGroup.appendChild(checkBox);
