@@ -57,14 +57,14 @@ todoList.addEventListener('keypress', (e) => {
 
 // add change event listener to the checkbox
 todoList.addEventListener('change', (e) => {
+  const completed = e.target.checked; // returns true/false based on checkbox status
   const isbn = e.target.parentElement.parentElement.id;
   const tasks = getTasks();
   tasks.forEach((task) => {
     if (task.isbn === isbn) {
-      toggleCompleteStatus(task, true);
+      toggleCompleteStatus(task, completed);
     }
   });
-  updateLocalStorage();
   console.log(getTasks());
-  //console.log(e.target.parentElement.parentElement.id);
+  updateLocalStorage();
 });
