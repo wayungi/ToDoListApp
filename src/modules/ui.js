@@ -22,13 +22,6 @@ const createIcon = () => {
   });
   const trash = document.createElement('i');
   trash.classList.add('fa-solid', 'fa-trash');
-  // trash.addEventListener('click', (e) => {
-  //   const taskId = e.target.parentElement.parentElement.id;
-  //   removeTask(taskId);
-  //   deleteActivity(taskId);
-  //   updateIndex(taskId);
-  //   //
-  // });
   trash.classList.add('hidden');
 
   groupDiv.append(ellipsis);
@@ -40,7 +33,6 @@ const createIcon = () => {
 const addActivity = (TodoListElement, task) => {
   const taskBlock = document.createElement('div');
   taskBlock.classList.add('task_block');
-  taskBlock.setAttribute('id', task.id);
   // more icon holder dive
   const dots = createIcon();
   dots.classList.add('more');
