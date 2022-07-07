@@ -33,6 +33,7 @@ const createIcon = () => {
 const addActivity = (TodoListElement, task) => {
   const taskBlock = document.createElement('div');
   taskBlock.classList.add('task_block');
+  taskBlock.setAttribute('id', task.isbn);
   // more icon holder dive
   const dots = createIcon();
   dots.classList.add('more');

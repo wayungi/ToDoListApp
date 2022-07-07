@@ -2,6 +2,8 @@ import './style.css';
 import {
   addTask,
   getTasks,
+  removeTask,
+  updateIndex,
 } from './modules/tasks.js';
 import { addActivity } from './modules/ui.js';
 import { createTask } from './modules/task.js';
@@ -27,6 +29,9 @@ form.addEventListener('submit', () => {
 // listen for clicks on delete buttons
 todoList.addEventListener('click', (e) => {
   if (e.target.classList.contains('fa-trash')) {
-    e.target.parentElement.parentElement.remove();
+    const taskBlock = e.target.parentElement.parentElement;
+    taskBlock.remove(); // remove task_block element
+    const indexOfTask = removeTask(taskBlock.id); // isbn
+    updateIndex(indexOfTask);
   }
 });

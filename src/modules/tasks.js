@@ -29,17 +29,18 @@ const getTasks = () => tasks;
 
 const addTask = (task) => tasks.push(task);
 
-const removeTask = (id) => {
-  tasks = tasks.filter((task) => task.id.toString() !== id);
-  return tasks;
+const removeTask = (isbn) => {
+  const task = tasks.find((task) => task.isbn === isbn);
+  const indexOfTask = tasks.indexOf(task);
+  tasks = tasks.filter((task) => task.isbn.toString() !== isbn);
+  return indexOfTask;
 };
 
-const updateIndex = (id) => {
-  let startIndex = +id;
-  for (let i = startIndex - 1; i < tasks.length; i += 1) {
-    tasks[i].id = startIndex;
-    startIndex += 1;
+const updateIndex = (index) => {
+  for (let i = index; i < tasks.length; i += 1) {
+    tasks[i].id = i + 1;
   }
+  console.log(tasks);
   return null;
 };
 
