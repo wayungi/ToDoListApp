@@ -6,6 +6,7 @@ import {
   updateIndex,
   updateTask,
   updateLocalStorage,
+  clearCompleted,
 } from './modules/methods.js';
 import { addActivity } from './modules/ui.js';
 import {
@@ -16,6 +17,7 @@ import {
 const todoList = document.getElementById('todo_list');
 const form = document.getElementById('task_form');
 const formInput = document.getElementById('task_input_field');
+const clearAllCompleted = document.getElementById('clear_btn');
 
 // popultate the app with tasks
 document.addEventListener('DOMContentLoaded', () => {
@@ -66,4 +68,12 @@ todoList.addEventListener('change', (e) => {
     }
   });
   updateLocalStorage();
+});
+
+// clear all completed event listener
+clearAllCompleted.addEventListener('click', () => {
+  clearCompleted();
+  updateLocalStorage();
+  todoList.innerHTML = '';
+  getTasks().forEach((task) => addActivity(todoList, task));
 });
