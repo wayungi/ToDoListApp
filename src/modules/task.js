@@ -1,4 +1,4 @@
-import { getTasks } from "./methods";
+import { getTasks } from './methods';
 
 const createTask = (description, completed = false, id) => ({
   description,
