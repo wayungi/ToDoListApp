@@ -40,8 +40,14 @@ const updateIndex = (index) => {
   for (let i = index; i < tasks.length; i += 1) {
     tasks[i].id = i + 1;
   }
-  console.log(tasks);
   return null;
+};
+
+const updateTask = (editedValue, isbn) => {
+  const task = tasks.find((task) => task.isbn === isbn);
+  const indexOfTask = tasks.indexOf(task);
+  tasks[indexOfTask].description = editedValue;
+  return task;
 };
 
 export {
@@ -49,4 +55,5 @@ export {
   getTasks,
   removeTask,
   updateIndex,
+  updateTask,
 };

@@ -4,6 +4,7 @@ import {
   getTasks,
   removeTask,
   updateIndex,
+  updateTask,
 } from './modules/tasks.js';
 import { addActivity } from './modules/ui.js';
 import { createTask } from './modules/task.js';
@@ -33,5 +34,17 @@ todoList.addEventListener('click', (e) => {
     taskBlock.remove(); // remove task_block element
     const indexOfTask = removeTask(taskBlock.id); // isbn
     updateIndex(indexOfTask);
+  }
+});
+
+// listener for 'enter' key and save new value
+todoList.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    const editedValue = e.target.value;
+    const isbn = e.target.parentElement.parentElement.id;
+    const result = updateTask(editedValue, isbn);
+    e.target.setAttribute('readonly', 'readonly');
+    e.target.classList.toggle('uneditable');
+    console.log(result);
   }
 });
