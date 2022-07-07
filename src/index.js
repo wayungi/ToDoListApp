@@ -42,9 +42,8 @@ todoList.addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     const editedValue = e.target.value;
     const isbn = e.target.parentElement.parentElement.id;
-    const result = updateTask(editedValue, isbn);
+    updateTask(editedValue, isbn);
     e.target.setAttribute('readonly', 'readonly');
     e.target.classList.toggle('uneditable');
-    console.log(result);
   }
 });
