@@ -1,29 +1,4 @@
-let tasks = [
-  {
-    description: 'Wash dishes',
-    completed: false,
-    isbn: '1657136930628',
-    id: 1,
-  },
-  {
-    description: 'Complete to do list App',
-    completed: false,
-    isbn: '1657136952100',
-    id: 2,
-  },
-  {
-    description: 'Take a walk for 2 hours',
-    completed: false,
-    isbn: '1657137266964',
-    id: 3,
-  },
-  {
-    description: 'Light the candle',
-    completed: false,
-    isbn: '1657137296252',
-    id: 4,
-  },
-];
+let tasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
 
 const getTasks = () => tasks;
 
@@ -50,10 +25,15 @@ const updateTask = (editedValue, isbn) => {
   return task;
 };
 
+const updateLocalStorage = () => {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+};
+
 export {
   addTask,
   getTasks,
   removeTask,
   updateIndex,
   updateTask,
+  updateLocalStorage,
 };

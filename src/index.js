@@ -5,6 +5,7 @@ import {
   removeTask,
   updateIndex,
   updateTask,
+  updateLocalStorage,
 } from './modules/tasks.js';
 import { addActivity } from './modules/ui.js';
 import { createTask } from './modules/task.js';
@@ -22,8 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 form.addEventListener('submit', () => {
   const userInput = formInput.value;
   const task = createTask(userInput, false, `${(getTasks().length + 1)}`);
-  addTask(task);
   addActivity(todoList, task);
+  addTask(task);
+  updateLocalStorage();
   document.getElementById('task_input_field').value = '';
 });
 
@@ -34,6 +36,7 @@ todoList.addEventListener('click', (e) => {
     taskBlock.remove(); // remove task_block element
     const indexOfTask = removeTask(taskBlock.id); // isbn
     updateIndex(indexOfTask);
+    updateLocalStorage();
   }
 });
 
@@ -45,5 +48,6 @@ todoList.addEventListener('keypress', (e) => {
     updateTask(editedValue, isbn);
     e.target.setAttribute('readonly', 'readonly');
     e.target.classList.toggle('uneditable');
+    updateLocalStorage();
   }
 });

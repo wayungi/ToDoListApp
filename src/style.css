@@ -52,7 +52,6 @@ input[type='text'] {
 }
 
 input[type='text']#description{
-  /* border:1px solid red; */
   border:none;
 }
 
