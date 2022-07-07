@@ -1,8 +1,3 @@
-import {
-  removeTask,
-  updateIndex,
-} from './tasks.js';
-
 const deleteActivity = (taskBlockId) => {
   const taskBlock = document.getElementById(taskBlockId);
   taskBlock.remove();
@@ -27,13 +22,13 @@ const createIcon = () => {
   });
   const trash = document.createElement('i');
   trash.classList.add('fa-solid', 'fa-trash');
-  trash.addEventListener('click', (e) => {
-    const taskId = e.target.parentElement.parentElement.id;
-    removeTask(taskId);
-    deleteActivity(taskId);
-    updateIndex(taskId);
-    //
-  });
+  // trash.addEventListener('click', (e) => {
+  //   const taskId = e.target.parentElement.parentElement.id;
+  //   removeTask(taskId);
+  //   deleteActivity(taskId);
+  //   updateIndex(taskId);
+  //   //
+  // });
   trash.classList.add('hidden');
 
   groupDiv.append(ellipsis);

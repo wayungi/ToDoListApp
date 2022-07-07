@@ -40,7 +40,6 @@ const updateIndex = (id) => {
     tasks[i].id = startIndex;
     startIndex += 1;
   }
-  console.log(tasks);
   return null;
 };
 

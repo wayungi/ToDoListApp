@@ -23,3 +23,10 @@ form.addEventListener('submit', () => {
   addActivity(todoList, task);
   document.getElementById('task_input_field').value = '';
 });
+
+// listen for clicks on delete buttons
+todoList.addEventListener('click', (e) => {
+  if (e.target.classList.contains('fa-trash')) {
+    e.target.parentElement.parentElement.remove();
+  }
+});
