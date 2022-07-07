@@ -10,7 +10,7 @@ import {
 import { addActivity } from './modules/ui.js';
 import {
   createTask,
-  clearAllCompleted,
+  toggleCompleteStatus,
 } from './modules/task.js';
 
 const todoList = document.getElementById('todo_list');
@@ -53,4 +53,18 @@ todoList.addEventListener('keypress', (e) => {
     e.target.classList.toggle('uneditable');
     updateLocalStorage();
   }
+});
+
+// add change event listener to the checkbox
+todoList.addEventListener('change', (e) => {
+  const isbn = e.target.parentElement.parentElement.id;
+  const tasks = getTasks();
+  tasks.forEach((task) => {
+    if (task.isbn === isbn) {
+      toggleCompleteStatus(task, true);
+    }
+  });
+  updateLocalStorage();
+  console.log(getTasks());
+  //console.log(e.target.parentElement.parentElement.id);
 });
