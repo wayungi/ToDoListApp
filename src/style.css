@@ -71,6 +71,11 @@ input[type='text']#description{
   cursor: pointer;
 }
 
+.fa-ellipsis-vertical, .fa-trash {
+  padding:8px 12px;
+  cursor: pointer;
+}
+
 input[type='button'] {
   all: unset;
   min-height: 50px;
