@@ -1,5 +1,5 @@
 # ToDoListApp
-A project to manage your activites 
+A web app designed to help web keep track of activities that are done and those that are still pending. Users can add, delete, mark as completed and update the activities. Built with Javscript, html, css and webpack.
 
 ## Built With
 
