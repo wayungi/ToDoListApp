@@ -6,7 +6,9 @@
   "scripts": {
     "test": "mocha",
     "build": "webpack",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.26.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^4.0.0",
     "hint": "^7.0.1",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
