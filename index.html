@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7a892cb0b1.js" crossorigin="anonymous"></script>  <title>To do list App</title>
+<script defer src="runtime.js"></script><script defer src="main.js"></script></head>
+<body>
+    <div class="wrapper flex-column">
+        <header class="flex-row">
+            <h1>Today's To Do</h1>
+            <div class="refresh_icon flex-row">
+                <i class="fa-solid fa-rotate fa-2x" id="refresh"></i>
+            </div>
+        </header>
+
+        <form action="#" id="task_form">
+            <input type="text" id="task_input_field" placeholder="Add to your list..."/>
+        </form>
+
+        <!-- todoList list place holder -->
+        <div id="todo_list" class="todo_list flex-column"></div>
+
+        <input type="button" id="clear_btn" value="Clear all completed">
+       
+    </div>
+    
+</body>
+</html>
