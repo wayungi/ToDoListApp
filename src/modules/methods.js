@@ -34,6 +34,8 @@ const clearCompleted = () => {
   return tasks;
 };
 
+const clearArray = () => tasks.splice(0, tasks.length);
+
 export {
   addTask,
   getTasks,
@@ -42,4 +44,5 @@ export {
   updateTask,
   updateLocalStorage,
   clearCompleted,
+  clearArray,
 };
