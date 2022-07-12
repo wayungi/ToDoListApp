@@ -33,6 +33,16 @@ header h1 {
 .refresh_icon {
   align-items: center;
   cursor: pointer;
+  padding:8px;
+  border-radius: 4px;
+}
+
+.refresh_icon:hover {
+  box-shadow: 0 0 2px rgba(20, 15, 15, 0.7);
+}
+
+.refresh_icon:active {
+  color: rgba(100, 0, 0, 0.5);
 }
 
 input[type='text'] {
