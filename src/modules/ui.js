@@ -13,14 +13,21 @@ const createCheckBox = (checkboxState) => {
   return checkbox;
 };
 
-const createIcon = () => {
-  const groupDiv = document.createElement('div');
+const createEllipsis = () => {
   const ellipsis = document.createElement('i');
   ellipsis.classList.add('fa-solid', 'fa-ellipsis-vertical');
   ellipsis.addEventListener('click', (e) => {
     e.target.classList.add('hidden');
     e.target.nextElementSibling.classList.remove('hidden');
   });
+
+  return ellipsis;
+};
+
+const createIcon = () => {
+  const groupDiv = document.createElement('div');
+  const ellipsis = createEllipsis();
+
   const trash = document.createElement('i');
   trash.classList.add('fa-solid', 'fa-trash');
   trash.classList.add('hidden');
