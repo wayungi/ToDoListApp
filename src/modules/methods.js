@@ -1,4 +1,4 @@
-let tasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : [];
+let tasks = [];
 
 const getTasks = () => tasks;
 
@@ -36,6 +36,12 @@ const clearCompleted = () => {
 
 const clearArray = () => tasks.splice(0, tasks.length);
 
+const updateTasks = () => {
+  tasks = localStorage.getItem('tasks')
+    ? JSON.parse(localStorage.getItem('tasks'))
+    : [];
+};
+
 export {
   addTask,
   getTasks,
@@ -45,4 +51,5 @@ export {
   updateLocalStorage,
   clearCompleted,
   clearArray,
+  updateTasks,
 };
