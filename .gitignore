@@ -2,4 +2,3 @@ node_modules/
 aside.js
 coverage/
 .vscode/
-methods.test.js
