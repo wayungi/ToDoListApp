@@ -40,3 +40,24 @@ describe('addtask', () => {
     expect(getTasks().length).toEqual(3);
   });
 });
+
+
+describe('removeTask', () => {
+  // Arrange
+
+  test('Should remove 1 task', () => {
+    // Act
+    removeTask('1657742044934');
+
+    //  Assert
+    expect(getTasks().length).toEqual(2);
+  });
+
+  test('Should remove 1 task', () => {
+    // Act
+    removeTask('1657742044936')
+
+    //  Assert
+    expect(getTasks().length).toEqual(1);
+  });
+});
