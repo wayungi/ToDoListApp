@@ -20,7 +20,6 @@ const createEllipsis = () => {
     e.target.classList.add('hidden');
     e.target.nextElementSibling.classList.remove('hidden');
   });
-
   return ellipsis;
 };
 
@@ -38,6 +37,22 @@ const createIcon = () => {
   return groupDiv;
 };
 
+const textField = (description) => {
+  const textInput = document.createElement('input');
+  textInput.setAttribute('type', 'text');
+  textInput.setAttribute('id', 'description');
+  textInput.setAttribute('readonly', 'readonly');
+  textInput.classList.add('uneditable');
+  textInput.value = description;
+
+  textInput.addEventListener('dblclick', (e) => {
+    e.target.removeAttribute('readonly');
+    e.target.classList.remove('uneditable');
+  });
+
+  return textInput;
+};
+
 const addActivity = (TodoListElement, task) => {
   const taskBlock = document.createElement('div');
   taskBlock.classList.add('task_block');
@@ -50,18 +65,7 @@ const addActivity = (TodoListElement, task) => {
   const itemGroup = document.createElement('div');
   itemGroup.classList.add('cb_desc', 'flex-row');
 
-  const textInput = document.createElement('input');
-  textInput.setAttribute('type', 'text');
-  textInput.setAttribute('id', 'description');
-  textInput.setAttribute('readonly', 'readonly');
-  textInput.classList.add('uneditable');
-
-  textInput.value = task.description;
-  textInput.addEventListener('dblclick', (e) => {
-    e.target.removeAttribute('readonly');
-    e.target.classList.remove('uneditable');
-  });
-
+  const textInput = textField(task.description);
   const checkBox = createCheckBox(task.completed);
 
   itemGroup.appendChild(checkBox);
