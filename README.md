@@ -25,13 +25,18 @@ A project to manage your activites
 
 [Live Demo Link](https://wayungi.github.io/ToDoListApp/)
 
-## Author
+## Authors
 
 👤 **Francis Wayungi**
 
 - GitHub: [@githubhandle](https://github.com/wayungi)
 - Twitter: [@twitterhandle](https://twitter.com/FrancisWayungi)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/francis-wayungi-3aa626231)
+
+👤 **Mumenya Nyamu**
+- GitHub: [@githubhandle](https://github.com/Nyame-Wolf/)
+- Twitter: [@twitterhandle](https://twitter.com/Mumenyam)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mumenya-nyamu-web-designer-data-enthusiast/) 
 
 ## 🤝 Contributing
 
