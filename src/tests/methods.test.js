@@ -41,7 +41,6 @@ describe('addtask', () => {
   });
 });
 
-
 describe('removeTask', () => {
   // Arrange
 
@@ -55,7 +54,7 @@ describe('removeTask', () => {
 
   test('Should remove 1 task', () => {
     // Act
-    removeTask('1657742044936')
+    removeTask('1657742044936');
 
     //  Assert
     expect(getTasks().length).toEqual(1);
