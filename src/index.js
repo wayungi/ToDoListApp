@@ -8,6 +8,7 @@ import {
   updateLocalStorage,
   clearCompleted,
   clearArray,
+  updateTasks,
 } from './modules/methods.js';
 import { addActivity } from './modules/ui.js';
 import {
@@ -23,6 +24,7 @@ const refresh = document.getElementById('refresh_div');
 
 // popultate the app with tasks
 document.addEventListener('DOMContentLoaded', () => {
+  updateTasks();
   const tasks = getTasks();
   tasks.forEach((task) => addActivity(todoList, task));
 });
