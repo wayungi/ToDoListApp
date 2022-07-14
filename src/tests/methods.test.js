@@ -3,6 +3,7 @@ import {
   addTask,
   getTasks,
   updateTask,
+  clearCompleted,
 } from '../modules/methods.js';
 
 import { toggleCompleteStatus } from '../modules/task.js';
@@ -109,10 +110,6 @@ describe('Todo list app tests', () => {
     test('task 6 description should be Big balls day', () => {
       // Act
 
-      addTask(task4);
-      addTask(task5);
-      addTask(task6);
-
       updateTask('Big balls day', '1657742044939');
 
       expect(getTasks()[3].description).toBe('Big balls day');
@@ -138,6 +135,17 @@ describe('Todo list app tests', () => {
     test('Change task2 completed to false', () => {
       const completedTask = toggleCompleteStatus(task2, false);
       expect(completedTask.completed).toBe(false);
+    });
+  });
+  describe('clear ompleted tasks', () => {
+    // act
+    test('', () => {
+      toggleCompleteStatus(task2, true);
+      toggleCompleteStatus(task4, true);
+      toggleCompleteStatus(task5, true);
+      clearCompleted();
+      expect(getTasks().length).toEqual(1);
+      expect(getTasks()[0]).toEqual(task6);
     });
   });
 });
