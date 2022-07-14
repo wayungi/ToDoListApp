@@ -29,6 +29,7 @@ describe('addtask', () => {
 
     //  Assert
     expect(getTasks().length).toEqual(1);
+    expect(getTasks()[0]).toEqual(task1);
   });
 
   test('Should add 2 task', () => {
@@ -37,6 +38,8 @@ describe('addtask', () => {
     addTask(task3);
 
     //  Assert
+    expect(getTasks()[1]).toEqual(task2);
+    expect(getTasks()[2]).toEqual(task3);
     expect(getTasks().length).toEqual(3);
   });
 });
