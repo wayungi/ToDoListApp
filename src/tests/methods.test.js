@@ -5,6 +5,8 @@ import {
   updateTask,
 } from '../modules/methods.js';
 
+import { toggleCompleteStatus } from '../modules/task.js';
+
 describe('Todo list app tests', () => {
   // Arrange
   const task1 = {
@@ -114,6 +116,28 @@ describe('Todo list app tests', () => {
       updateTask('Big balls day', '1657742044939');
 
       expect(getTasks()[3].description).toBe('Big balls day');
+    });
+  });
+
+  describe('Update task completed status', () => {
+    test('Change task4 completed to true', () => {
+      const completedTask = toggleCompleteStatus(task4, true);
+      expect(completedTask.completed).toBe(true);
+    });
+
+    test('Change task4 completed to false', () => {
+      const completedTask = toggleCompleteStatus(task4, false);
+      expect(completedTask.completed).toBe(false);
+    });
+
+    test('Change task2 completed to true', () => {
+      const completedTask = toggleCompleteStatus(task2, true);
+      expect(completedTask.completed).toBe(true);
+    });
+
+    test('Change task2 completed to false', () => {
+      const completedTask = toggleCompleteStatus(task2, false);
+      expect(completedTask.completed).toBe(false);
     });
   });
 });
