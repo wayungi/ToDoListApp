@@ -43,7 +43,7 @@ form.addEventListener('submit', () => {
 // listen for clicks on delete buttons
 todoList.addEventListener('click', (e) => {
   if (e.target.classList.contains('fa-trash')) {
-    const taskBlock = e.target.parentElement.parentElement;
+    const taskBlock = e.target.parentElement;
     taskBlock.remove(); // remove task_block element
     const indexOfTask = removeTask(taskBlock.id); // isbn
     updateIndex(indexOfTask);

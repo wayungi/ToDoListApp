@@ -13,28 +13,11 @@ const createCheckBox = (checkboxState) => {
   return checkbox;
 };
 
-const createEllipsis = () => {
-  const ellipsis = document.createElement('i');
-  ellipsis.classList.add('fa-solid', 'fa-ellipsis-vertical');
-  ellipsis.addEventListener('click', (e) => {
-    e.target.classList.add('hidden');
-    e.target.nextElementSibling.classList.remove('hidden');
-  });
-  return ellipsis;
-};
-
-const createIcon = () => {
-  const groupDiv = document.createElement('div');
-  const ellipsis = createEllipsis();
-
+const createTrashIcon = () => {
   const trash = document.createElement('i');
   trash.classList.add('fa-solid', 'fa-trash');
   trash.classList.add('hidden');
-
-  groupDiv.append(ellipsis);
-  groupDiv.appendChild(trash);
-
-  return groupDiv;
+  return trash;
 };
 
 const textField = (description) => {
@@ -57,9 +40,6 @@ const addActivity = (TodoListElement, task) => {
   const taskBlock = document.createElement('div');
   taskBlock.classList.add('task_block');
   taskBlock.setAttribute('id', task.isbn);
-  // more icon holder dive
-  const dots = createIcon();
-  dots.classList.add('more');
 
   // div to group checkbox & description
   const itemGroup = document.createElement('div');
@@ -72,7 +52,7 @@ const addActivity = (TodoListElement, task) => {
   itemGroup.appendChild(textInput);
 
   taskBlock.appendChild(itemGroup);
-  taskBlock.appendChild(dots);
+  taskBlock.appendChild(createTrashIcon());
 
   TodoListElement.appendChild(taskBlock);
   return null;

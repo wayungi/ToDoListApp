@@ -77,7 +77,6 @@ input[type='text'] {
 }
 
 .cb_desc {
-  /* border:1px solid black; */
   width: 95%;
 }
 
@@ -100,10 +99,10 @@ input[type='text']#description {
   cursor: pointer;
 }
 
-.fa-ellipsis-vertical,
 .fa-trash {
   padding: 8px 12px;
   cursor: pointer;
+  color: rgba(237, 2, 245, .9);
 }
 
 input[type='button'] {
@@ -117,7 +116,6 @@ input[type='button'] {
   border-radius:0 0 4px 4px;
   cursor: pointer;
   box-shadow: 4px 4px 10px -2px rgba(6, 218, 233, 0.788);
-
 }
 
 input[type='button']:hover {
@@ -140,10 +138,6 @@ input[type='button']:active {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-}
-
-.hidden {
-  display: none;
 }
 
 input[type='text'].uneditable {
