@@ -27,15 +27,19 @@ body {
 
 header {
   border-bottom: 1px solid rgba(200, 200, 200, 0.5);
-  padding: 15px 20px;
+  padding: 15px 5% 15px 10%;
   justify-content: space-between;
   background: linear-gradient(to left,  rgba(245, 2, 34, 0.2), rgba(237, 2, 245, .2));
   border-radius:5px 5px 0 0;
 }
 
 header h1 {
-  font-weight: normal;
-  font-size: 1.5em;
+  font-weight: bold;
+  font-size: 2.5em;
+  font-style: oblique;
+  color:blueviolet;
+  text-shadow: 1px 1px 2px rgba(5, 247, 243, 0.2);
+  
 }
 
 .refresh_icon {
