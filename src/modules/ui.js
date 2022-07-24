@@ -16,7 +16,6 @@ const createCheckBox = (checkboxState) => {
 const createTrashIcon = () => {
   const trash = document.createElement('i');
   trash.classList.add('fa-solid', 'fa-trash');
-  trash.classList.add('hidden');
   return trash;
 };
 
