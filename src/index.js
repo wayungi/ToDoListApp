@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
   tasks.forEach((task) => addActivity(todoList, task));
 });
 
-form.addEventListener('submit', () => {
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
   const userInput = formInput.value;
   const task = createTask(userInput, false, `${getTasks().length + 1}`);
   addActivity(todoList, task);
