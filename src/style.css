@@ -29,6 +29,8 @@ header {
   border-bottom: 1px solid rgba(200, 200, 200, 0.5);
   padding: 15px 20px;
   justify-content: space-between;
+  background: linear-gradient(to left,  rgba(245, 2, 34, 0.2), rgba(237, 2, 245, .2));
+  border-radius:5px 5px 0 0;
 }
 
 header h1 {
