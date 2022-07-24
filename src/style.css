@@ -20,8 +20,9 @@ body {
   display: flex;
   width: 70%;
   margin: 4% auto;
-  box-shadow: 0 0 5px 2px rgba(140, 140, 140, 0.5);
- 
+  box-shadow: 4px 4px 10px -2px rgba(6, 218, 233, 0.788);
+  border-radius: 10px;
+  background-color: aliceblue;
 }
 
 header {
