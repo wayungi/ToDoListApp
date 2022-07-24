@@ -23,7 +23,7 @@ A web app designed to help web keep track of activities that are done and those 
 
 ## Live Demo
 
-[Live Demo Link](https://wayungi.github.io/ToDoListApp/dist/)
+[Live Demo Link](https://wayungi.github.io/ToDoListApp/)
 
 ## Authors
 
