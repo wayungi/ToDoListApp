@@ -44,6 +44,9 @@ Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](../../issues/).
 
+
+## Aknowledgement
+Background image pattern used is from <a href='https://www.freepik.com/vectors/honeycomb-pattern'>Honeycomb pattern vector created by starline - www.freepik.com</a>
 ## Show your support
 
 Give a ⭐️ if you like this project!
