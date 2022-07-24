@@ -67,6 +67,7 @@ todoList.addEventListener('keypress', (e) => {
 todoList.addEventListener('change', (e) => {
   const completed = e.target.checked; // returns true/false based on checkbox status
   const isbn = e.target.parentElement.parentElement.id;
+  e.target.nextElementSibling.classList.toggle('strike');
   const tasks = getTasks();
   tasks.forEach((task) => {
     if (task.isbn === isbn) {

@@ -143,3 +143,7 @@ input[type='button']:active {
 input[type='text'].uneditable {
   color: rgba(100, 100, 100, 0.7);
 }
+
+#description.strike {
+  text-decoration: line-through;
+}
