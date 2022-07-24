@@ -1,4 +1,3 @@
-import pattern from './images/bg-pattern.jpg';
 import './style.css';
 
 import {

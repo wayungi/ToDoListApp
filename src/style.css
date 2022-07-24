@@ -20,6 +20,7 @@ body {
   display: flex;
   width: 70%;
   margin: 4% auto;
+
   /* box-shadow: 4px 4px 10px -2px rgba(6, 218, 233, 0.788); */
   border-radius: 10px 10px 4px 4px;
   background-color: aliceblue;
@@ -29,19 +30,18 @@ header {
   border-bottom: 1px solid rgba(200, 200, 200, 0.5);
   padding: 15px 5% 15px 10%;
   justify-content: space-between;
-  background: linear-gradient(to left,  rgba(245, 2, 34, 0.2), rgba(237, 2, 245, .2));
-  border-radius:5px 5px 0 0;
+  background: linear-gradient(to left, rgba(245, 2, 34, 0.2), rgba(237, 2, 245, 0.2));
+  border-radius: 5px 5px 0 0;
   box-shadow: 4px -2px 10px -2px rgba(6, 218, 233, 0.788);
-  clip-path: inset(0px -15px 0px 0px); /* thanks to stackoverflow: https://stackoverflow.com/questions/5115427/ */
+  clip-path: inset(0 -15px 0 0); /* thanks to stackoverflow: https://stackoverflow.com/questions/5115427/ */
 }
 
 header h1 {
   font-weight: bold;
   font-size: 2.5em;
   font-style: oblique;
-  color:blueviolet;
+  color: blueviolet;
   text-shadow: 1px 1px 2px rgba(5, 247, 243, 0.2);
-  
 }
 
 .refresh_icon {
@@ -49,12 +49,12 @@ header h1 {
   cursor: pointer;
   padding: 8px;
   border-radius: 4px;
-  color:rgba(137, 43, 226, 0.377);
+  color: rgba(137, 43, 226, 0.377);
 }
 
 .refresh_icon:hover {
   box-shadow: 0 0 2px rgba(20, 15, 15, 0.7);
-  color:rgb(200, 0, 0);
+  color: rgb(200, 0, 0);
 }
 
 .refresh_icon:active {
@@ -71,9 +71,11 @@ input[type='text'] {
   padding: 0 20px;
   font-size: 1.1em;
 }
-.todo_list, form {
+
+.todo_list,
+form {
   box-shadow: 4px -2px 10px -2px rgba(6, 218, 233, 0.788);
-  clip-path: inset(0px -15px 0px 0px); /* thanks to stackoverflow: https://stackoverflow.com/questions/5115427/ */
+  clip-path: inset(0 -15px 0 0); /* thanks to stackoverflow: https://stackoverflow.com/questions/5115427/ */
 }
 
 .cb_desc {
@@ -102,7 +104,7 @@ input[type='text']#description {
 .fa-trash {
   padding: 8px 12px;
   cursor: pointer;
-  color: rgba(237, 2, 245, .9);
+  color: rgba(237, 2, 245, 0.9);
 }
 
 input[type='button'] {
@@ -110,10 +112,9 @@ input[type='button'] {
   min-height: 50px;
   text-align: center;
   background-color: rgba(51, 25, 202, 0.123);
-  color: rgba(100, 100, 100, 0.7);
   font-size: 1.5em;
-  color:blueviolet;;
-  border-radius:0 0 4px 4px;
+  color: blueviolet;
+  border-radius: 0 0 4px 4px;
   cursor: pointer;
   box-shadow: 4px 4px 10px -2px rgba(6, 218, 233, 0.788);
 }
@@ -121,7 +122,6 @@ input[type='button'] {
 input[type='button']:hover {
   background-color: rgba(51, 25, 202, 0.1);
 }
-
 
 input[type='button']:active {
   background-color: rgba(51, 25, 202, 0.15);
