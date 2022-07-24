@@ -12,10 +12,7 @@ import {
   updateTasks,
 } from './modules/methods.js';
 import { addActivity } from './modules/ui.js';
-import {
-  createTask,
-  toggleCompleteStatus,
-} from './modules/task.js';
+import { createTask, toggleCompleteStatus } from './modules/task.js';
 
 const todoList = document.getElementById('todo_list');
 const form = document.getElementById('task_form');
@@ -32,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 form.addEventListener('submit', () => {
   const userInput = formInput.value;
-  const task = createTask(userInput, false, `${(getTasks().length + 1)}`);
+  const task = createTask(userInput, false, `${getTasks().length + 1}`);
   addActivity(todoList, task);
   addTask(task);
   updateLocalStorage();
@@ -65,8 +62,12 @@ todoList.addEventListener('keypress', (e) => {
 // add change event listener to the checkbox
 todoList.addEventListener('change', (e) => {
   const completed = e.target.checked; // returns true/false based on checkbox status
+  if (completed) {
+    e.target.nextElementSibling.classList.add('strike');
+  } else {
+    e.target.nextElementSibling.classList.remove('strike');
+  }
   const isbn = e.target.parentElement.parentElement.id;
-  e.target.nextElementSibling.classList.toggle('strike');
   const tasks = getTasks();
   tasks.forEach((task) => {
     if (task.isbn === isbn) {

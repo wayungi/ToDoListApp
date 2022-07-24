@@ -48,6 +48,10 @@ const addActivity = (TodoListElement, task) => {
   const textInput = textField(task.description);
   const checkBox = createCheckBox(task.completed);
 
+  if (task.completed) {
+    textInput.classList.add('strike');
+  }
+
   itemGroup.appendChild(checkBox);
   itemGroup.appendChild(textInput);
 
@@ -58,7 +62,4 @@ const addActivity = (TodoListElement, task) => {
   return null;
 };
 
-export {
-  addActivity,
-  deleteActivity,
-};
+export { addActivity, deleteActivity };
